@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+
     <link rel="stylesheet" href="landingpage.css">
 </head>
 
 <body>
     <title>Kalaa Planet</title>
+
 
     <!-- -------------------------------------------------------------------------- -->
     <div class="nav-bar">
@@ -25,54 +35,81 @@
             <image src="./images/darklogo.png"></image>
         </div>
         <div class="nav-items">
-            <a href="#">Home
-                <!-- <div class="design">
-                    <div class="d1"></div>
-                    <div class="d2"></div>
-                    <div class="d3"></div>
-                </div> -->
+            <a href="#" onclick="scrollToDiv('.home')">Home
+                <image class="line3" src="./images/line3.png"></image>
             </a>
-            <a href="#">About Us</a>
-            <a href="#">Collections</a>
-            <a href="#">Products</a>
-            <a href="#">Testimonials</a>
-            <a href="#">FAQ</a>
-            <a href="#">Contact Us</a>
+            <a href="#" onclick="scrollToDiv('.about-us')">About Us
+                <image class="line3" src="./images/line3.png"></image>
+            <a href="#" onclick="scrollToDiv('.collection')">Collections
+                <image class="line3" src="./images/line3.png"></image>
+            <a href="#" onclick="scrollToDiv('.team-bg')">Products
+                <image class="line3" src="./images/line3.png"></image></a>
+            <a href="#" onclick="scrollToDiv('.test')">Testimonials
+                <image class="line3" src="./images/line3.png"></image></a>
+            <a href="#" onclick="scrollToDiv('.FAQ')">FAQ
+                <image class="line3" src="./images/line3.png"></image></a>
+            <a href="#" onclick="scrollToDiv('.contactus')">Contact Us
+                <image class="line3" src="./images/line3.png"></image></a>
         </div>
         <button class="login ">SIGN IN</button>
     </div>
+    <script>
+        function scrollToDiv(className) {
+            var element = document.querySelector(className);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+
+
+
+
     <!-- ---------------------------------------------------------------------------- -->
     <div class="hero">
 
         <div class="text">
             <div class="l1">Welcome to Kaala Planet</div>
             <div class="line">
-                <image src="images/line.png"></image>
+                <image src="images/heroline.png" styles=></image>
                 <div class="heading">
-                    <p>"Crafted by Hand,</p>
-                    <p>Crafted with</p>
-                    <p>Heart</p>
+                    <p  class="animated-text">Crafted by Hand,</p>
+                    <p  class="animated-text">Crafted with</p>
+                    <p  class="animated-text third">Heart</p>
                 </div>
             </div>
 
         </div>
-        <div class="bot">
+        <!-- <div class="bot">
             <div class="bot-heading">Click here for assistance </div>
             <div class="bot-img"> </div>
-        </div>
+        </div> -->
 
 
     </div>
+    
     <!-- ---------------------------------------------------------------------------------------------- -->
+    
+    
+    
+
+
+
+
+
+
+
+
 
     <div class="about-us">
         <img class="left-img" />
         <div class="right-text">
             <div class="right-text-content">
-                <p class="about-l1">About Us</p>
-                <p class="about-l2">Crafting Moments, Inspiring</p>
-                <p class="about-l2">Lives: Get to Know</p>
-                <p class="about-l2">Kalaaplanet</p>
+                <p class="scrollani1 linestyle">About Us</p>
+                <p class="scrollani1 about-l2 ">Crafting Moments, Inspiring Lives: Get to Know</p>
+
+                <p class="scrollani1 about-l2 ">Kalaaplanet</p>
                 <image src="./images/dash.png"></image>
                 <p class="about-l3">Welcome to Kalaa Planet, the
                     virtual sanctuary where art transcends boundaries
@@ -90,13 +127,75 @@
         </div>
 
     </div>
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+      
+        gsap.from(".scrollani1", {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: ".scrollani1",
+            start: "top 80%", 
+            end: "bottom 20%", 
+            scrub: true, 
+            markers: false, 
+           
+          }
+        });
+      </script>
     <!-- --------------------------------------------------------------------------------------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.sliderc').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                dots: true,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
     <div class="collection">
         <div class="collection-content">
-            <span class="cl1">Our Collections</span>
+            <span class="cl1 scrollani">Our Collections</span>
             <span class="cl2">
-                <p>Keep Your Eye on Our Latest Collection</p>
-                <p class="cl3">Collection
+                <p class="scrollani">Keep Your Eye on Our Latest</p>
+                <p class="cl3 scrollani">Collection
                     <image src="./images/dash.png"></image>
                 </p>
 
@@ -104,225 +203,535 @@
             <div fluid class="collection-btn container">
                 <button class="cbtn">ART</button>
                 <button class="cbtn">APPARELS</button>
-                <button class="cbtn">Corporate Gifts</button>
+                <button class="cbtn">CORPORATE GIFTS</button>
             </div>
-            <div class="row crow">
-                <div class="col col-md-4 col-sm-3 ccol">
+            <div class="row crow sliderc">
+                <div class="col col-md-4 col-sm-3 ccol slick">
                     <image class="img-fluid" src="./images/image 5.png"></image>
                 </div>
-                <div class="col col-md-4 col-sm-3 ccol ">
+                <div class="col col-md-4 col-sm-3 ccol slick ">
                     <image class="img-fluid" src="./images/image 6.png"></image>
                 </div>
-                <div class="col col-md-4 col-sm-3 ccol">
+                <div class="col col-md-4 col-sm-3 ccol slick">
                     <image class="img-fluid" src="./images/image 7.png"></image>
                 </div>
+                <div class="col col-md-4 col-sm-3 ccol slick">
+                    <image class="img-fluid" src="./images/image 5.png"></image>
+                </div>
+                <div class="col col-md-4 col-sm-3 ccol slick ">
+                    <image class="img-fluid" src="./images/image 6.png"></image>
+                </div>
+                <div class="col col-md-4 col-sm-3 ccol slick">
+                    <image class="img-fluid" src="./images/image 7.png"></image>
+                </div>
+
+
             </div>
+
         </div>
 
 
 
     </div>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+      
+        gsap.from(".scrollani", {
+          opacity: 0,
+          y: 50,
+          duration: 6,
+          stagger: .3,
+          scrollTrigger: {
+            trigger: ".scrollani",
+            start: "top 80%", 
+            end: "bottom 20%", 
+            scrub: true, 
+            markers: false, 
+           
+          }
+        });
+      </script>
+   
 
     <!-- --------------------------------------------------------------------------------------------------------------= -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
     <div>
         <div class="team-main ">
             <div class="team-bg">
 
-                <span class="tl1">Our Products</span>
-                <p class="tl2">Collection We’re Providing
-                    <!-- <image src="./images/dash.png"></image> -->
+                <span class="tl1 scrollani3">Our Products</span>
+                <p class="tl2 scrollani3">Collection We’re Providing
+
                 </p>
                 <image class="products-dash" src="./images/dash white.png"></image>
 
                 <div class="container">
-                    <div class="row trow">
-                        <div class="col-md-3 tcol">
 
 
-
+                    <div class="row trow slider">
+                        <div class="col-md-3 tcol slide">
                             <div class="image-container">
                                 <img class="img-fluid product-img" src="./images/8.png" alt="Washroom Wall Design">
-                                <div class="overlay-content">
+                                <div class="overlay-content  container">
                                     <div class="inner">
                                         <span class="overlay-text" href="#">Best<br> Seller</span>
                                         <div class="readmore-button">
                                             <a href="#">
-                                                <image class="read-more-btn" src="./images/arrow.png"></image></span>
+                                                <image class="read-more-btn" src="./images/arrow.png"></image>
+                                                </span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
-                        <div class="col-md-3 tcol">
+                        <div class="col-md-3 tcol slide">
                             <div class="image-container">
                                 <img class="img-fluid product-img" src="./images/10.png" alt="Washroom Wall Design">
-                                <div class="overlay-content">
-                                    <div class="inner">
+                                <div class="overlay-content  container">
+                                    <div class="inner ">
                                         <span class="overlay-text" href="#">Featured<br>Product</span>
                                         <div class="readmore-button">
                                             <a href="#">
-                                                <image class="read-more-btn" src="./images/arrow.png"></image></span>
+                                                <image class="read-more-btn" src="./images/arrow.png"></image>
+                                                </span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 tcol">
+                        <div class="col-md-3 tcol slide">
 
                             <div class="image-container">
-                                <img class="img-fluid product-img" src="./images/9.png" alt="Washroom Wall Design">
-                                <div class="overlay-content">
+                                <img class="img-fluid product-img" src="./images/9.png" alt="">
+                                <div class="overlay-content  container">
                                     <div class="inner">
                                         <span class="overlay-text" href="#">Top Rated<br>Product</span>
                                         <div class="readmore-button">
                                             <a href="#">
-                                                <image class="read-more-btn" src="./images/arrow.png"></image></span>
+                                                <image class="read-more-btn" src="./images/arrow.png"></image>
+                                                </span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 tcol">
+                        <div class="col-md-3 tcol slide">
 
                             <div class="image-container">
-                                <img class="img-fluid product-img" src="./images/11.png" alt="Washroom Wall Design">
-                                <div class="overlay-content">
+                                <img class="img-fluid product-img" src="./images/9.png" alt="">
+                                <div class="overlay-content  container">
                                     <div class="inner">
-                                        <span class="overlay-text" href="#">Latest<br> Product</span>
+                                        <span class="overlay-text" href="#">Top Rated<br>Product</span>
                                         <div class="readmore-button">
                                             <a href="#">
-                                                <image class="read-more-btn" src="./images/arrow.png"></image></span>
+                                                <image class="read-more-btn" src="./images/arrow.png"></image>
+                                                </span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-3 tcol slide">
+
+
+
+                            <div class="image-container slide">
+                                <img class="img-fluid product-img" src="./images/image 5.png" alt="Washroom Wall Design">
+                                <div class="overlay-content  container">
+                                    <div class="inner">
+                                        <span class="overlay-text" href="#">Best<br> Seller</span>
+                                        <div class="readmore-button">
+                                            <a href="#">
+                                                <image class="read-more-btn" src="./images/arrow.png"></image>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-3 tcol slide">
+
+
+
+                            <div class="image-container">
+                                <img class="img-fluid product-img" src="./images/image 6.png" alt="Washroom Wall Design">
+                                <div class="overlay-content  container">
+                                    <div class="inner">
+                                        <span class="overlay-text" href="#">Best<br> Seller</span>
+                                        <div class="readmore-button">
+                                            <a href="#">
+                                                <image class="read-more-btn" src="./images/arrow.png"></image>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-3 tcol slide">
+
+
+
+                            <div class="image-container">
+                                <img class="img-fluid product-img" src="./images/image 7.png" alt="Washroom Wall Design">
+                                <div class="overlay-content  container">
+                                    <div class="inner">
+                                        <span class="overlay-text" href="#">Best<br> Seller</span>
+                                        <div class="readmore-button">
+                                            <a href="#">
+                                                <image class="read-more-btn" src="./images/arrow.png"></image>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-3 tcol slide">
+
+
+
+                            <div class="image-container">
+                                <img class="img-fluid product-img" src="./images/9.png" alt="Washroom Wall Design">
+                                <div class="overlay-content  container">
+                                    <div class="inner">
+                                        <span class="overlay-text" href="#">Top Rated<br>Product</span>
+                                        <div class="readmore-button">
+                                            <a href="#">
+                                                <image class="read-more-btn" src="./images/arrow.png"></image>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
-        </div>
-
-    </div>
-
-    <!-- -------------------------------------------------_---------------------------- -->
-    <div class="test">
-        <div class="test-content">
-            <div class="test-left">
-                <p class="testl1">Testimonials</p>
-                <span class="testl2">What They Say ?</span>
-                <image class="test-dash" src="./images/dash white.png"></image>
-                <p class="testl3">"I had a fantastic experience with Kaala Planet.
-                    They were professional, efficient, and the quality of their work was excellent.
-                    I would highly recommend them to anyone in need of painting services."
-                </p>
-                <div class="image-name">
-                    <image class="test-img" src="./images/user.png"></image>
-                    <div class="cdetails">
-                        <span class="cname"> Aarushi Chauhan</span>
-                        <span class="ctitle">Our Customer </span>
 
 
 
-                    </div>
-                </div>
-                <div class="test-btn">
-                    <button class="test-btn1"></button>
-                    <button class="test-btn2"></button>
-                    <button class="test-btn3"></button>
-                </div>
-            </div>
-            <div class="test-right container">
-                <img class="img-fluid" src="./images/feedback2.png" alt="Washroom Wall Design">
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-    <!-- -------------------------------------------------------------------------------------------------------------------- -->
-    <div>
-
-
-        <div class="FAQ">
-
-            <div class="faqleft">
-                <p class="faqheading1">FAQ
-
-                </p>
-                <p class="faqheading2">Frequently Asked Questions
-
-                </p>
-                <image src="./images/dash.png"></image>
 
             </div>
-            <div class="faqright">
-                <div class="ab_accordion">
-                    <div class="ab_accordion_section">
-                        <div class="ab_accordion_header" onclick="toggleAccordion(this)">
 
-                            <span>How can I purchase a painting from your website ?</span>
-                            <image class="plus" src="./images/68.png"></image>
-                        </div>
-                        <div class="ab_accordion_content">
-                            Content for section 1 goes here.
-                        </div>
-                    </div>
-                    <div class="ab_accordion_section">
-                        <div class="ab_accordion_header" onclick="toggleAccordion(this)">
 
-                            <span>How long will it take to receive my painting?</span>
-                            <image class="plus" src="./images/68.png"></image>
-                        </div>
-                        <div class="ab_accordion_content">
-                            The time it takes to receive your painting will depend on a number of factors, including the
-                            size and complexity of the painting, your location, and our current workload. Once you've
-                            submitted your quote request, our team will provide you with an estimated delivery date.
-                        </div>
-                    </div>
-                    <div class="ab_accordion_section">
-                        <div class="ab_accordion_header" onclick="toggleAccordion(this)">
-                            <span>How can I purchase a painting from your website?</span>
-                            <image class="plus" src="./images/68.png"></image>
 
-                        </div>
-                        <div class="ab_accordion_content">
-                            Content for section 3 goes here.
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
 
     </div>
     <script>
-        function toggleAccordion(header) {
-            header.classList.toggle('active');
-            var content = header.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        }
+        gsap.registerPlugin(ScrollTrigger);
+      
+        gsap.from(".scrollani3", {
+          opacity: 0,
+          y: 50,
+          duration: 6,
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: ".scrollani3",
+            start: "top 80%", 
+            end: "bottom 20%", 
+            scrub: true, 
+            markers: false, 
+           
+          }
+        });
+      </script>
+
+    <!-- -------------------------------------------------_---------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slidert').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                dots: true,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
     </script>
+
+
+
+
+
+    <div class="test">
+        <div class="test-content">
+            <div class="test-left">
+                <p class="testl1 scrollani4">Testimonials</p>
+                <span class="testl2 scrollani4">What They Say ?</span>
+
+                <image class="test-dash" src="./images/dash white.png"></image>
+                <div class="slidert">
+                    <div class="slick">
+                        <p class="testl3">"I had a fantastic experience with Kaala Planet.
+                            They were professional, efficient, and the quality of their work was excellent.
+                            I would highly recommend them to anyone in need of painting services."
+                        </p>
+                        <div class="image-name">
+                            <image class="test-img" src="./images/user.png"></image>
+                            <div class="cdetails">
+                                <span class="cname"> Aarushi Chauhan</span>
+                                <span class="ctitle">Our Customer </span>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <p class="testl3">"I had a fantastic experience with Kaala Planet.
+                            They were professional, efficient, and the quality of their work was excellent.
+                            I would highly recommend them to anyone in need of painting services."
+                        </p>
+                        <div class="image-name">
+                            <image class="test-img" src="./images/user.png"></image>
+                            <div class="cdetails">
+                                <span class="cname"> Aarushi Chauhan</span>
+                                <span class="ctitle">Our Customer </span>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <p class="testl3">"I had a fantastic experience with Kaala Planet.
+                            They were professional, efficient, and the quality of their work was excellent.
+                            I would highly recommend them to anyone in need of painting services."
+                        </p>
+                        <div class="image-name">
+                            <image class="test-img" src="./images/user.png"></image>
+                            <div class="cdetails">
+                                <span class="cname"> Aarushi Chauhan</span>
+                                <span class="ctitle">Our Customer </span>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- <div class="test-btn">
+                        <button class="test-btn1"></button>
+                        <button class="test-btn2"></button>
+                        <button class="test-btn3"></button>
+                    </div> -->
+                </div>
+                <div class="test-right container">
+                    <img class="img-fluid" src="./images/feedback2.png" alt="Washroom Wall Design">
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+          
+            gsap.from(".scrollani4", {
+              opacity: 0,
+              y: 50,
+              duration: 6,
+              stagger: 0.3,
+              scrollTrigger: {
+                trigger: ".scrollani4",
+                start: "top 80%", 
+                end: "bottom 20%", 
+                scrub: true, 
+                markers: false, 
+               
+              }
+            });
+          </script>
+
+        <!-- -------------------------------------------------------------------------------------------------------------------- -->
+        <div>
+
+
+            <div class="FAQ">
+
+                <div class="faqleft">
+                    <p class="faqheading1 scrollani5">FAQ's
+
+                    </p>
+                    <p class="faqheading2 scrollani5">Frequently Asked Questions
+
+                    </p>
+                    <image src="./images/dash.png"></image>
+
+                </div>
+                <div class="faqright">
+                    <div class="ab_accordion">
+                        <div class="ab_accordion_section">
+                            <div class="ab_accordion_header" onclick="toggleAccordion(this)">
+
+                                <span>How can I purchase a painting from your website ?</span>
+                                <image class="plus" src="./images/68.png"></image>
+                            </div>
+                            <div class="ab_accordion_content">
+                                To purchase a painting, please click on the "Get Quote" button on the painting's
+                                 page and fill out the form that appears. Our team will review your request and 
+                                 get in touch with you to discuss pricing and shipping options.
+                            </div>
+                        </div>
+                        <div class="ab_accordion_section">
+                            <div class="ab_accordion_header" onclick="toggleAccordion(this)">
+
+                                <span>How long will it take to receive my painting?</span>
+                                <image class="plus" src="./images/68.png"></image>
+                            </div>
+                            <div class="ab_accordion_content">
+                                The time it takes to receive your painting will depend on a number of factors, including
+                                the
+                                size and complexity of the painting, your location, and our current workload. Once
+                                you've
+                                submitted your quote request, our team will provide you with an estimated delivery date.
+                            </div>
+                        </div>
+                        <div class="ab_accordion_section">
+                            <div class="ab_accordion_header" onclick="toggleAccordion(this)">
+                                <span>How can I purchase a painting from your website?</span>
+                                <image class="plus" src="./images/68.png"></image>
+
+                            </div>
+                            <div class="ab_accordion_content">
+                                Shipping costs will vary depending on the size and weight of the painting,
+                                 as well as your location. Our team will provide you with an accurate shipping
+                                  quote as part of the pricing discussion after you've submitted your quote request.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            function toggleAccordion(header) {
+                header.classList.toggle('active');
+                var content = header.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            }
+
+
+
+
+            
+        gsap.registerPlugin(ScrollTrigger);
+      
+        gsap.from(".scrollani5", {
+          opacity: 0,
+          y: 50,
+          duration: 6,
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: ".scrollani5",
+            start: "top 80%", 
+            end: "bottom 20%", 
+            scrub: true, 
+            markers: false, 
+           
+          }
+        });
+     
+        </script>
     </div>
+
     <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
     <div class="contactus">
 
         <div class="faqleft">
-            <p class="faqheading1">Contact Us</p>
-            <p class="faqheading2">Feel Free to Write</p>
+            <p class="faqheading1 scrollani6">Contact Us</p>
+            <p class="faqheading2 scrollani6">Feel Free to Write</p>
             <image src="./images/dash.png"></image>
 
         </div>
@@ -356,7 +765,7 @@
 
                 </div>
                 <div class="submit-row">
-                    <button type="submit" >Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
             </form>
 
@@ -376,13 +785,13 @@
                 </div>
                 <div class="socialmedia">
                     <a>
-                        <image src="./images/Link1.png"></image>
+                        <image src="./images/linkedinlight.png"></image>
                     </a>
                     <a>
-                        <image src="./images/Link 2.png"></image>
+                        <image src="./images/metalight.png"></image>
                     </a>
                     <a>
-                        <image src="./images/Link3.png"></image>
+                        <image src="./images/instalight.png"></image>
                     </a>
 
 
@@ -390,7 +799,7 @@
 
 
             </div>
-            
+
 
 
 
@@ -400,120 +809,157 @@
 
 
 
-</div>
+    </div>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+      
+        gsap.from(".scrollani6", {
+          opacity: 0,
+          y: 50,
+          duration: 6,
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: ".scrollani6",
+            start: "top 80%", 
+            end: "bottom 20%", 
+            scrub: true, 
+            markers: false, 
+           
+          }
+        });
+      </script>
 
 
 
 
 
-        <!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-        <div>
-            <div class='footer-main'>
-                <div class="foot-content">
-                    <div class="foot-text-btn">
-                        <span class="logo2">
-                            <image src="./images/darklogo.png"></image>
-                        </span>
-                        <div class="socialmedia">
-                            <a>
-                                <image src="./images/x.png"></image>
-                            </a>
-                            <a>
-                                <image src="./images/fb.png"></image>
-                            </a>
-                            <a>
-                                <image src="./images/gram.png"></image>
-                            </a>
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-
-                    <div class='flinks'>
-                        <span class="link-heading">Explore
-                            <image class="dash-foot" src="./images/dash.png"></image>
-                        </span>
-
-
-                        <a href="#" class='linkf'> About Us</a>
-                        <a href="#" class='linkf'> Products</a>
-                        <a href="#" class='linkf'> Collection</a>
-                        <a href="#" class='linkf'> Testimonials</a>
-                        <a href="#" class='linkf'>FAQ</a>
-
-
-                    </div>
-                    <div class='flinks'>
-
-                        <span class="link-heading">Contact Us
-                            <image class="dash-foot" src="./images/dash.png"></image>
-                        </span>
-                        <a href="#" class='linkf'> Privacy Policy</a>
-                        <a href="#" class='linkf'> Terms & Condition </a>
-
-
+    <div>
+        <div class='footer-main'>
+            <div class="foot-content">
+                <div class="foot-text-btn">
+                    <span class="logo2">
+                        <image src="./images/darklogo.png"></image>
+                    </span>
+                    <div class="socialmedia">
+                        <a>
+                            <image src="./images/linkedin.png"></image>
+                        </a>
+                        <a>
+                            <image src="./images/meta.png"></image>
+                        </a>
+                        <a>
+                            <image src="./images/insta.png"></image>
+                        </a>
 
 
                     </div>
 
-                    <div class='flinks'>
-                        <span class="link-heading">Contact
-                            <image class="dash-foot" src="./images/dash.png"></image>
-                        </span>
 
-                        <div class='call-mail'>
-                            <div class="call">
-                                <image src="./images/call.png"></image>
-                                <div class="call-txt">
-                                    <span class="call1">
-                                        Call anytime
-                                    </span>
-                                    <span class="call2">
-                                        (+91) 981-812-5308
-                                    </span>
-
-                                </div>
-
-                            </div>
-                            <div class="call">
-                                <image src="./images/mail.png"></image>
-                                <div class="call-txt">
-                                    <span class="call1">
-                                        Send email
-                                    </span>
-                                    <span class="call2">
-                                        shreekalaaplanet@gmail.com
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-
-                    </div>
                 </div>
-                <div class="copyrights">
-                    <div class="copy-content">
-                        <span class="copy-text">© 2024 KALAA PLANET. ALL RIGHTS RESERVED.</span>
 
 
+
+
+                <div class='flinks'>
+                    <span class="link-heading">Explore
+                        <image class="dash-foot" src="./images/dash.png"></image>
+                    </span>
+
+
+                    <a href="#" class='linkf' onclick="scrollToDiv('.about-us')">
+                        <image src="./images/Symbol.png"></image> About Us</a>
+                    <a href="#" class='linkf'  onclick="scrollToDiv('.test-bg')"> 
+                        <image src="./images/Symbol.png"></image> Products</a>
+                    <a href="#" class='linkf'  onclick="scrollToDiv('.collection')">
+                        <image src="./images/Symbol.png"></image>  Collection</a>
+                    <a href="#" class='linkf'  onclick="scrollToDiv('.test')">
+                        <image src="./images/Symbol.png"></image> Testimonials</a>
+                    <a href="#" class='linkf'  onclick="scrollToDiv('.FAQ')">
+                        <image src="./images/Symbol.png"></image> FAQs</a>
+                   
+                    
+
+
+                </div>
+                <div class='flinks'>
+
+                    <span class="link-heading">Services
+                        <image class="dash-foot" src="./images/dash.png"></image>
+                    </span>
+                    <a href="#" class='linkf'  onclick="scrollToDiv('.contactus')">
+                        <image src="./images/Symbol.png"></image> Contact Us</a>
+                    <a href="#" class='linkf'>  <image src="./images/Symbol.png"></image> Privacy Policy</a>
+                    <a href="#" class='linkf'> <image src="./images/Symbol.png"></image> Terms & Conditions </a>
+
+
+
+
+                </div>
+
+                <div class='flinks'>
+                    <span class="link-heading">Contact
+                        <image class="dash-foot" src="./images/dash.png"></image>
+                    </span>
+
+                    <div class='call-mail'>
+                        <div class="call">
+                            <image src="./images/call.png"></image>
+                            <div class="call-txt">
+                                <span class="call1">
+                                    Call Anytime
+                                </span>
+                                <span class="call2">
+                                    (+91) 981-812-5308
+                                </span>
+
+                            </div>
+
+                        </div>
+                        <div class="call">
+                            <image src="./images/mail.png"></image>
+                            <div class="call-txt">
+                                <span class="call1">
+                                    Send Email
+                                </span>
+                                <span class="call2">
+                                    shreekalaaplanet@gmail.com
+                                </span>
+
+                            </div>
+
+                        </div>
 
                     </div>
+
+
+
 
                 </div>
             </div>
-        
+            <div class="copyrights">
+                <div class="copy-content">
+                    <span class="copy-text">© 2024 KALAA PLANET. ALL RIGHTS RESERVED.</span>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+      
+
+
+        <iframe title="chat-bot" src="https://testapi.unomiru.com/api/Waysbot?bot=kalaa" frameborder="0" width="50%" height="100%" allow="microphone;" style="height: 90svh; position: fixed; right: 0; bottom: 10px; width: 27rem; z-index: 9;"></iframe>
+
+
+
+
+
+     
 </body>
 
 </html>
